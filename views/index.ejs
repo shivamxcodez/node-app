@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Management</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+  </head>
+  <body>
+    <h1>All Users</h1>
+    <button style="max-width: 150px;" onclick="window.location.href='/add'">
+      Add New User
+    </button>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Created at</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+      <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= new Date(user.created_at).toLocaleDateString('en-GB') %></td>
+        <td>
+          <form
+            method="POST"
+            action="/delete/<%= user.id %>"
+            onsubmit="return confirm('Delete this user?');">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+        <td>
+          <button onclick="window.location.href='/edit/<%= user.id %>'">Update
+          </button>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+    
+  </body>
+</html>

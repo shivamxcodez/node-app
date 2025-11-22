@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+        <title>Edit</title>
+    </head>
+    <body>
+        <div style="padding: 10% 0% 0% 0%;">
+        <div style="border: 1.5px solid rgb(220, 220, 220); border-radius: 5px; padding: 3% 10% 3% 30%;">
+        <h1 style="margin: 5% 0% 10% 0%;" >Update User </h1>
+            <form method="POST" action="/edit/<%= user.id %>">
+
+                <label >Name:</label>
+                <input type="text" name="name" value="<%= user.name %>" required />
+                <br/>
+                <br/>
+                <label>Email:</label>
+                <input type="email" name="email" value="<%= user.email %>" required />
+                <br/>
+                <br/>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

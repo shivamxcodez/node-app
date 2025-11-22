@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add User</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+  </head>
+  <body>
+    <div style="padding: 10% 0% 0% 0%;">
+    <div style="border: 1.5px solid rgb(220, 220, 220); border-radius: 5px; padding: 3% 10% 3% 30%;">
+    <h1 style="margin-top: 8%;">Add a New User</h1>
+    <form method="POST" action="/add">
+      <label>Name:</label>
+      <input type="text" name="name" required />
+      <label>Email:</label>
+      <input type="email" name="email" required />
+      <button type="submit">Add User</button>
+    </form>
+    
+    <button style="max-width: 150px;" onclick="window.location.href='/'">
+  Back to Users
+</button>
+</div>
+    </div>
+  </body>
+</html>
